@@ -45,3 +45,8 @@ jobs:
            heroku_email: "ammarahmad749@gmail.com"
            appdir: "myapp"
            buildpack: https://github.com/heroku/heroku-buildpack-nodejs#v170
+    - run: npm test -- --coverage
+      working-directory: myapp
+    - run: bash <(curl -s https://codecov.io/bash)
+
+  
